@@ -32,6 +32,8 @@ public class CarMovement : MonoBehaviour
         // get inputs in Update() to make it more responsive
         moveInput = Input.GetAxis("Vertical");
         turnInput = Input.GetAxis("Horizontal");
+
+        // print($"linear velocity: {rb.linearVelocity.sqrMagnitude}, angular velocity: {rb.angularVelocity.sqrMagnitude}");
     }
 
     void FixedUpdate()
