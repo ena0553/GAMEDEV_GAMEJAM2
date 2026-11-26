@@ -5,8 +5,9 @@ public class CarMovement : MonoBehaviour
     public float acceleration = 25f;
     public float maxSpeed = 30f;
     public float turnSpeed = 100f;
-
     public float driftFactor = 0.95f; // lower = more grip, higher = more drift
+    public float steeringSpeedThreshold = 15f; /* if the car is going less than
+        this speed (either forward or in reverse), it cannot turn at full speed */
 
     // layers that count as ground for the purpose of checking if the car is grounded
     [SerializeField] private LayerMask groundLayers = ~0; // default is all layers
@@ -76,15 +77,29 @@ public class CarMovement : MonoBehaviour
     private void Steer()
     {
         float forwardSpeed = Vector3.Dot(rb.linearVelocity, transform.forward);
+        float speedMagnitude = Mathf.Abs(forwardSpeed);
+        // print(speedMagnitude);
 
-        if (Mathf.Abs(forwardSpeed) > 0.5f)
+        if (speedMagnitude == 0f)
         {
-            float direction = Mathf.Sign(forwardSpeed);
-            float turn = turnInput * turnSpeed * direction * Time.fixedDeltaTime;
-
-            Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
-            rb.MoveRotation(rb.rotation * turnRotation);
+            return;
         }
+
+        float turnCoefficient;
+        if (speedMagnitude < steeringSpeedThreshold)
+        {
+            turnCoefficient = speedMagnitude / steeringSpeedThreshold;
+        }
+        else
+        {
+            turnCoefficient = 1f;
+        }
+
+        float direction = Mathf.Sign(forwardSpeed);
+        float turn = turnInput * turnSpeed * turnCoefficient * direction * Time.fixedDeltaTime;
+
+        Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
+        rb.MoveRotation(rb.rotation * turnRotation);
     }
 
     private void ApplyLateralFriction()

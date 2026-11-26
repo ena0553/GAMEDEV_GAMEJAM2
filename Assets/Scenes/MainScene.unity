@@ -382566,9 +382566,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.00015735626
+    x: 0.024702936
     y: 0
-    width: 0.9996853
+    width: 0.9505941
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -433352,6 +433352,10 @@ PrefabInstance:
     - target: {fileID: 5751045599545675489, guid: 9ab304cb04794b147befdd6dc1c97514, type: 3}
       propertyPath: acceleration
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751045599545675489, guid: 9ab304cb04794b147befdd6dc1c97514, type: 3}
+      propertyPath: steeringSpeedThreshold
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8570722970337121781, guid: 9ab304cb04794b147befdd6dc1c97514, type: 3}
       propertyPath: m_LocalScale.x
