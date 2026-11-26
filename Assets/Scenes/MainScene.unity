@@ -382795,9 +382795,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.024702936
+    x: 0.078728944
     y: 0
-    width: 0.9505941
+    width: 0.8425421
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -433596,8 +433596,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5751045599545675489, guid: 9ab304cb04794b147befdd6dc1c97514, type: 3}
+      propertyPath: maxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751045599545675489, guid: 9ab304cb04794b147befdd6dc1c97514, type: 3}
       propertyPath: acceleration
-      value: 25
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5751045599545675489, guid: 9ab304cb04794b147befdd6dc1c97514, type: 3}
       propertyPath: steeringSpeedThreshold
@@ -589873,7 +589877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392722425744774714, guid: c44edb12446715548aa0b0dadea05258, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: 64.42391
       objectReference: {fileID: 0}
     - target: {fileID: 7392722425744774714, guid: c44edb12446715548aa0b0dadea05258, type: 3}
       propertyPath: m_LocalPosition.y
@@ -589881,7 +589885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392722425744774714, guid: c44edb12446715548aa0b0dadea05258, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23
+      value: 115.20808
       objectReference: {fileID: 0}
     - target: {fileID: 7392722425744774714, guid: c44edb12446715548aa0b0dadea05258, type: 3}
       propertyPath: m_LocalRotation.w
